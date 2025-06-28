@@ -1,0 +1,664 @@
+/* Importação de Fontes do Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Roboto:wght@400;700&display=swap');
+
+/* === Variáveis CSS (Cores e Fontes) === */
+:root {
+    --primary-color: #1A2C42; /* Azul Marinho para títulos, cabeçalhos, seções escuras */
+    --secondary-color: #2ECC71; /* Verde Esmeralda para destaque e CTAs */
+    --text-dark: #1A2C42; /* Cor de texto principal (Azul Marinho) para fundos claros */
+    --text-light: #FFFFFF; /* Branco Puro para textos em fundos escuros */
+    --bg-light: #FFFFFF; /* Fundo principal claro */
+    --bg-dark: #1A2C42; /* Fundo para seções escuras (igual ao primary-color) */
+    --gray-modern: #6C7A89; /* Um cinza médio para textos secundários, parágrafos */
+    --bg-dark-card: #2B4360; /* Uma variação ligeiramente mais clara do Azul Marinho para cards em fundos escuros */
+
+    /* Mantenha as fontes */
+    --font-heading: 'Poppins', sans-serif;
+    --font-body: 'Roboto', sans-serif;
+}
+
+/* === Reset Básico e Estilos Globais === */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-body);
+    line-height: 1;
+    color: var(--text-dark); /* Padrão para textos em geral, pode ser sobrescrito por p */
+    background-color: var(--bg-light); /* Fundo branco puro */
+    overflow-x: hidden; /* Evita rolagem horizontal indesejada */
+}
+
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px; /* Adicionado padding horizontal para telas menores */
+}
+
+/* Removido `a` global aqui para controle mais específico. */
+
+h1, h2, h3 {
+    font-family: var(--font-heading);
+    color: var(--text-dark); /* Azul Marinho para títulos, pode ser sobrescrita por seções */
+}
+
+h1 {
+    font-size: 3em;
+    margin-bottom: 20px;
+}
+
+h2 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+}
+
+h3 {
+    font-size: 1.8em;
+    margin-bottom: 15px;
+}
+
+p {
+    font-size: 1.1em;
+    margin-bottom: 1em;
+    color: var(--gray-modern); /* Parágrafos agora usam o cinza moderno */
+}
+
+/* === Estilos de Links Globais (Remoção de Sublinhado) === */
+a {
+    text-decoration: none; /* Remove o sublinhado de TODOS os links */
+    color: var(--primary-color); /* Define uma cor padrão para links, pode ser sobrescrita */
+}
+a:hover {
+    text-decoration: underline; /* Adiciona sublinhado apenas no hover para feedback visual */
+}
+
+
+/* Estilos de Botões */
+.btn-primary {
+    display: inline-block;
+    background-color: var(--secondary-color); /* Verde Esmeralda */
+    color: var(--text-light); /* Texto branco */
+    padding: 18px 35px;
+    border-radius: 8px;
+    font-size: 1.2em;
+    font-weight: 700;
+    text-transform: uppercase;
+    transition: background-color 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    border: none;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.btn-primary:hover {
+    background-color: #24A35B; /* Um tom mais escuro do verde esmeralda para hover */
+    text-decoration: none;
+}
+
+/* === Header / Hero Section === */
+.hero-section {
+    background: #1a2c42;
+    color: var(--text-light); /* Texto branco */
+    text-align: center;
+    padding: 165px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 70vh;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+.hero-section .container {
+    position: relative;
+    z-index: 2;
+}
+
+.hero-section h1 {
+    color: var(--text-light); /* Título em branco */
+    font-size: 3.5em;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    line-height: 1;
+    word-spacing: normal; /* Removido o espaçamento extra para um visual mais junto */
+    letter-spacing: -0.02em; /* Adicionado um leve espaçamento negativo entre as letras */
+}
+
+.hero-section .sub-headline {
+    font-size: 1.5em;
+    margin-bottom: 40px;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    color: rgba(255, 255, 255, 0.9); /* Sub-título em branco suave */
+}
+
+/* === Problem Section === */
+.problem-section {
+    padding: 80px 0;
+    background-color: var(--bg-light); /* Fundo branco */
+    text-align: center;
+}
+
+.problem-section h2 {
+    color: var(--text-dark); /* Título em azul marinho */
+    margin-bottom: 40px;
+}
+
+.problem-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.problem-item {
+    background: var(--bg-light); /* Fundo branco */
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.problem-item:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+}
+
+.problem-icon {
+    width: 60px;
+    height: 60px;
+    background-color: var(--secondary-color); /* Verde Esmeralda */
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 15px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.problem-icon i {
+    font-size: 2em;
+    color: var(--text-light); /* Ícone branco */
+}
+
+.problem-item p {
+    color: var(--gray-modern); /* Texto em cinza moderno */
+    font-size: 1.05em;
+    margin-bottom: 0;
+}
+
+/* === Solution Section === */
+.solution-section {
+    background-color: var(--bg-dark); /* Fundo azul marinho */
+    color: var(--text-light); /* Texto branco */
+    text-align: center;
+    padding: 80px 0;
+}
+
+.solution-section h2 {
+    color: var(--text-light); /* Título branco */
+    margin-bottom: 40px;
+}
+
+.solution-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.solution-item {
+    background-color: var(--bg-dark-card); /* Azul Marinho ligeiramente mais claro */
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.solution-item:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+}
+
+.solution-icon {
+    width: 80px;
+    height: 80px;
+    background: var(--secondary-color); /* Verde Esmeralda */
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 20px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+}
+
+.solution-icon i {
+    font-size: 2.5em;
+    color: var(--text-light); /* Ícone branco */
+}
+
+.solution-item h3 {
+    color: var(--secondary-color); /* Título em verde esmeralda */
+    margin-bottom: 10px;
+}
+
+.solution-item p {
+    color: rgba(255, 255, 255, 0.8); /* Parágrafo em branco suave */
+    font-size: 1em;
+}
+
+/* === Target Audience Section === */
+.target-audience-section {
+    padding: 80px 0;
+    background-color: var(--bg-light); /* Fundo branco */
+    text-align: center;
+}
+
+.target-audience-section h2 {
+    color: var(--text-dark); /* Título em azul marinho */
+    margin-bottom: 30px;
+}
+
+.target-audience-section p {
+    max-width: 800px;
+    margin: 0 auto 40px;
+    font-size: 1.2em;
+    color: var(--gray-modern); /* Parágrafos em cinza moderno */
+}
+
+/* === Process Section === */
+.process-section {
+    background-color: var(--bg-light); /* Fundo branco */
+    text-align: center;
+    padding: 80px 0;
+}
+
+.process-section h2 {
+    color: var(--text-dark); /* Título em azul marinho */
+    margin-bottom: 40px;
+}
+
+.process-steps {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 40px;
+    margin-top: 40px;
+}
+
+.step-item {
+    background-color: var(--bg-light); /* Fundo branco */
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.step-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+}
+
+.step-icon {
+    width: 100px;
+    height: 100px;
+    background: var(--primary-color); /* Azul Marinho */
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 20px;
+    box-shadow: 0 3px 15px rgba(0,0,0,0.1);
+}
+
+.step-icon i {
+    font-size: 3em;
+    color: var(--text-light); /* Ícone branco */
+}
+
+.step-item h3 {
+    color: var(--primary-color); /* Título em azul marinho */
+    font-size: 1.6em;
+    margin-bottom: 10px;
+}
+
+.step-item p {
+    font-size: 1.1em;
+    color: var(--gray-modern); /* Parágrafo em cinza moderno */
+}
+
+/* === Testimonials Section (se houver) === */
+/* Não foi modificada, mas manter variáveis consistentes */
+.testimonials-section {
+    padding: 80px 0;
+    background-color: var(--bg-light);
+    text-align: center;
+}
+
+.testimonials-section h2 {
+    color: var(--text-dark);
+    margin-bottom: 40px;
+}
+
+.testimonial-card {
+    background-color: var(--bg-light);
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.testimonial-card p {
+    font-style: italic;
+    font-size: 1.1em;
+    margin-bottom: 20px;
+    color: var(--gray-modern);
+}
+
+.testimonial-author {
+    font-weight: 700;
+    color: var(--primary-color);
+    font-size: 1.05em;
+}
+
+/* === CTA Final Section === */
+.cta-section-final {
+    background: linear-gradient(to right, var(--bg-dark), #1a5195); /* Usando variáveis de color */
+    color: var(--text-light); /* Texto branco */
+    padding: 80px 20px;
+    text-align: center;
+}
+
+.cta-section-final h2 {
+    font-size: 2.8em;
+    margin-bottom: 30px;
+    color: var(--text-light); /* Título branco */
+}
+
+.cta-section-final p {
+    font-size: 1.3em;
+    margin-top: 25px;
+    color: rgba(255, 255, 255, 0.9); /* Parágrafo em branco suave */
+}
+
+/* === Footer === */
+footer {
+    background-color: var(--bg-dark); /* Fundo azul marinho */
+    color: rgba(255, 255, 255, 0.7); /* Texto em branco suave */
+    text-align: center;
+    padding: 30px 20px;
+    font-size: 0.9em;
+}
+
+footer p {
+    margin-bottom: 10px;
+    line-height: 1.8;
+}
+
+footer a {
+    color: var(--secondary-color); /* Links em verde esmeralda */
+    transition: color 0.3s ease;
+    text-decoration: none;
+}
+
+footer a:hover {
+    color: var(--text-light); /* Links em branco puro no hover */
+    text-decoration: none;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 30px;
+    margin-bottom: 30px;
+}
+
+.footer-contact, .footer-legal {
+    flex: 1;
+    min-width: 250px;
+    text-align: left;
+}
+
+.footer-contact h4 {
+    color: var(--text-light); /* Título em branco puro */
+    margin-bottom: 15px;
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    color: rgba(255, 255, 255, 0.7); /* Texto em branco suave */
+}
+
+.contact-item i {
+    font-size: 1.2em;
+    margin-right: 10px;
+    color: var(--secondary-color); /* Ícone em verde esmeralda */
+}
+
+.contact-item span, .contact-item a {
+    color: rgba(255, 255, 255, 0.7); /* Texto e links em branco suave */
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.contact-item a:hover {
+    color: var(--text-light); /* Links em branco puro no hover */
+    text-decoration: none;
+}
+
+.footer-legal {
+    text-align: right;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.legal-link {
+    color: rgba(255, 255, 255, 0.7); /* Links em branco suave */
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.legal-link:hover {
+    color: var(--text-light); /* Links em branco puro no hover */
+    text-decoration: none;
+}
+
+.footer-bottom {
+    border-top: 1px solid rgba(255, 255, 255, 0.2); /* Linha divisória em branco muito suave */
+    padding-top: 20px;
+    margin-top: 20px;
+    text-align: center;
+}
+
+/* Certificações */
+/* Manter as cores atuais ou ajustar se houver ícones coloridos */
+.certifications {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.certifications img {
+    max-height: 30px;
+    filter: grayscale(100%) opacity(70%);
+    transition: filter 0.3s ease;
+}
+
+.certifications img:hover {
+    filter: grayscale(0%) opacity(100%);
+}
+
+/* === Floating WhatsApp Button === */
+.whatsapp-float {
+    position: fixed;
+    width: 60px;
+    height: 60px;
+    bottom: 30px;
+    right: 30px;
+    background-color: #25d366; /* Cor do WhatsApp */
+    color: #FFF;
+    border-radius: 50px;
+    text-align: center;
+    font-size: 30px;
+    box-shadow: 2px 2px 3px #999;
+    z-index: 1000; /* Garante que o botão esteja acima de outros elementos */
+    display: flex; /* Para centralizar o ícone */
+    align-items: center; /* Centraliza verticalmente */
+    justify-content: center; /* Centraliza horizontalmente */
+    transition: transform 0.3s ease;
+}
+
+.whatsapp-float:hover {
+    transform: scale(1.1); /* Efeito de "pop" ao passar o mouse */
+}
+
+/* === Responsividade (Media Queries) === */
+@media (max-width: 900px) {
+    .hero-section h1 {
+        font-size: 2.8em;
+    }
+    .hero-section .sub-headline {
+        font-size: 1.3em;
+    }
+    h2 {
+        font-size: 2em;
+    }
+    .solution-item h3 {
+        font-size: 1.5em;
+    }
+    .cta-section-final h2 {
+        font-size: 2.2em;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero-section {
+        padding: 80px 15px;
+        min-height: 60vh;
+    }
+
+    .hero-section h1 {
+        font-size: 2.2em;
+        word-spacing: normal; /* Manter o ajuste para telas menores */
+        letter-spacing: -0.02em; /* Manter o ajuste para telas menores */
+    }
+
+    .hero-section .sub-headline {
+        font-size: 1.1em;
+    }
+
+    h2 {
+        font-size: 1.8em;
+    }
+
+    .btn-primary {
+        padding: 15px 30px;
+        font-size: 1.1em;
+    }
+
+    .problem-section, .solution-section, .target-audience-section, .process-section, .cta-section-final, footer {
+        padding: 60px 15px;
+    }
+
+    .problem-list, .solution-list, .process-steps {
+        grid-template-columns: 1fr; /* Uma coluna em telas menores */
+    }
+
+    /* Ajuste para os ícones dos cards */
+    .problem-icon, .solution-icon, .step-icon {
+        width: 45px; /* Ligeiramente menor */
+        height: 45px; /* Ligeiramente menor */
+        margin-bottom: 10px; /* Reduzir margem para economizar espaço */
+    }
+
+    .problem-icon i, .solution-icon i, .step-icon i {
+        font-size: 1.5em; /* Corrigido o typo e ajustado o tamanho da fonte */
+    }
+
+    .footer-content {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .footer-contact, .footer-legal {
+        text-align: center;
+        width: 100%;
+    }
+
+    .footer-legal {
+        margin-top: 20px;
+    }
+
+    .whatsapp-float {
+        width: 50px;
+        height: 50px;
+        bottom: 20px;
+        right: 20px;
+        font-size: 25px;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-section h1 {
+        font-size: 1.8em;
+        word-spacing: normal; /* Manter o ajuste para telas muito pequenas */
+        letter-spacing: -0.01em; /* Ajuste sutil para telas muito pequenas */
+    }
+    .hero-section .sub-headline {
+        font-size: 1em;
+    }
+    h2 {
+        font-size: 1.5em;
+    }
+    p {
+        font-size: 1em;
+    }
+    .btn-primary {
+        font-size: 1em;
+        padding: 12px 25px;
+    }
+
+    /* Ajustes para ícones em telas muito pequenas (se necessário, pode ser redundante) */
+    .problem-icon, .solution-icon, .step-icon {
+        width: 40px;
+        height: 40px;
+    }
+    .problem-icon i, .solution-icon i, .step-icon i {
+        font-size: 1.3em;
+    }
+}
