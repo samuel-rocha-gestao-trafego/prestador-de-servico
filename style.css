@@ -1,0 +1,795 @@
+/* Importação de Fontes do Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Roboto:wght@400;700&display=swap');
+
+/* === Variáveis CSS (Cores e Fontes) === */
+:root {
+    --primary-color: #1A2C42; /* Azul Marinho para títulos, cabeçalhos, seções escuras */
+    --secondary-color: #2ECC71; /* Verde Esmeralda para destaque e CTAs */
+    --text-dark: #1A2C42; /* Cor de texto principal (Azul Marinho) para fundos claros */
+    --text-light: #FFFFFF; /* Branco Puro para textos em fundos escuros */
+    --bg-light: #FFFFFF; /* Fundo principal claro */
+    --bg-dark: #1A2C42; /* Fundo para seções escuras (igual ao primary-color) */
+    --gray-modern: #6C7A89; /* Um cinza médio para textos secundários, parágrafos */
+    --bg-dark-card: #2B4360; /* Uma variação ligeiramente mais clara do Azul Marinho para cards em fundos escuros */
+
+    /* Mantenha as fontes */
+    --font-heading: 'Poppins', sans-serif;
+    --font-body: 'Roboto', sans-serif;
+}
+
+/* === Reset Básico e Estilos Globais === */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-body);
+    line-height: 1.6;
+    color: var(--text-dark);
+    background-color: #fff;
+    overflow-x: hidden; /* Evita rolagem horizontal indesejada */
+}
+
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+h1, h2, h3 {
+    font-family: var(--font-heading);
+    color: var(--text-dark);
+    line-height: 1.2;
+    margin-bottom: 20px;
+}
+
+h1 { font-size: 3.2em; }
+h2 { font-size: 2.5em; }
+h3 { font-size: 1.8em; }
+
+p {
+    font-size: 1.1em;
+    color: var(--gray-modern);
+    margin-bottom: 1em;
+    line-height: 1.7; /* Ajuste para melhor legibilidade de parágrafos */
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* === Botões === */
+.btn-primary {
+    display: inline-block;
+    background-color: var(--secondary-color); /* Verde Esmeralda */
+    color: var(--text-light); /* Branco */
+    font-family: var(--font-heading);
+    font-weight: 700;
+    padding: 15px 30px;
+    border-radius: 8px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    box-shadow: 0 4px 15px rgba(46, 204, 113, 0.4); /* Sombra para o botão CTA */
+    text-align: center;
+    border: none;
+    cursor: pointer;
+    font-size: 1.1em;
+}
+
+.btn-primary:hover {
+    background-color: #27ae60; /* Verde um pouco mais escuro no hover */
+    transform: translateY(-3px); /* Efeito de elevação */
+    box-shadow: 0 6px 20px rgba(46, 204, 113, 0.6);
+}
+
+/* === Hero Section === */
+.hero-section {
+    background: linear-gradient(135deg, var(--primary-color) 0%, #172A3A 100%); /* Gradiente azul escuro */
+    color: var(--text-light);
+    padding: 100px 20px;
+    text-align: center;
+    position: relative;
+    overflow: hidden; /* Para garantir que o pseudo-elemento não vaze */
+    min-height: 70vh; /* Altura mínima para o hero */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hero-section h1 {
+    font-size: 3.8em;
+    font-weight: 700;
+    margin-bottom: 25px;
+    line-height: 1.1;
+    color: var(--text-light);
+    text-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Sombra no texto */
+    letter-spacing: -0.03em; /* Ajuste para melhor leitura e profissionalismo */
+}
+
+.hero-section .sub-headline {
+    font-size: 1.5em;
+    margin-bottom: 40px;
+    color: rgba(255, 255, 255, 0.9); /* Branco com leve transparência */
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.5; /* Melhorar legibilidade da sub-headline */
+}
+
+/* === Seção de Problemas === */
+.problem-section {
+    padding: 80px 0;
+    background-color: var(--bg-light);
+    text-align: center;
+}
+
+.problem-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px; /* Espaço entre os cards */
+    margin-top: 50px;
+}
+
+.problem-item {
+    background-color: var(--bg-light);
+    border: 1px solid #e0e0e0;
+    border-radius: 10px;
+    padding: 30px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08); /* Sombra mais suave */
+    text-align: center;
+    flex: 1;
+    min-width: 280px;
+    max-width: 380px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.problem-item:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
+}
+
+.problem-icon {
+    font-size: 2.5em;
+    color: var(--secondary-color); /* Verde Esmeralda para os ícones */
+    margin-bottom: 20px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background-color: rgba(46, 204, 113, 0.1); /* Fundo sutil para o ícone */
+}
+
+.problem-item p {
+    color: var(--text-dark); /* Texto mais escuro para melhor contraste */
+    font-size: 1em;
+}
+
+/* === Seção de Solução === */
+.solution-section {
+    padding: 80px 0;
+    background-color: var(--bg-dark); /* Fundo escuro */
+    color: var(--text-light); /* Texto claro */
+    text-align: center;
+}
+
+.solution-section h2 {
+    color: var(--text-light);
+}
+
+.solution-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 50px;
+}
+
+.solution-item {
+    background-color: var(--bg-dark-card); /* Variação de azul escuro para cards */
+    border-radius: 10px;
+    padding: 30px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    flex: 1;
+    min-width: 280px;
+    max-width: 380px;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.solution-item:hover {
+    transform: translateY(-8px);
+    background-color: #365070; /* Um pouco mais claro no hover */
+}
+
+.solution-icon {
+    font-size: 2.5em;
+    color: var(--secondary-color);
+    margin-bottom: 20px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background-color: rgba(46, 204, 113, 0.1);
+}
+
+.solution-item h3 {
+    color: var(--text-light);
+    margin-bottom: 15px;
+}
+
+.solution-item p {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 1em;
+}
+
+/* --- Seção "Para Quem é Meu Serviço?" --- */
+.target-audience-section {
+    padding: 80px 0;
+    background-color: var(--bg-dark); /* Fundo escuro para contraste */
+    color: var(--text-light); /* Texto claro no fundo escuro */
+    text-align: center;
+    overflow: hidden; /* Garante que as animações não causem barra de rolagem */
+}
+
+.target-audience-section h2 {
+    color: var(--text-light); /* Título claro */
+    margin-bottom: 40px;
+}
+
+.target-audience-content {
+    display: flex;
+    flex-wrap: wrap; /* Permite quebrar em linhas em telas menores */
+    justify-content: center;
+    align-items: center;
+    gap: 50px; /* Espaço entre as colunas */
+    margin-top: 50px;
+}
+
+.target-audience-text {
+    flex: 1; /* Permite que o texto ocupe o espaço disponível */
+    min-width: 300px; /* Largura mínima para o texto */
+    max-width: 550px; /* Largura máxima para o texto */
+    text-align: left; /* Alinha o texto à esquerda */
+    z-index: 1; /* Garante que o texto fique acima de qualquer sobreposição */
+    position: relative; /* Para z-index funcionar */
+}
+
+.target-audience-text .intro-paragraph,
+.target-audience-text .outro-paragraph {
+    color: rgba(255, 255, 255, 0.9);
+    line-height: 1.6;
+    margin-bottom: 25px; /* Espaço antes da lista */
+}
+.target-audience-text .outro-paragraph {
+    margin-top: 25px; /* Espaço depois da lista */
+}
+
+
+/* Nova lista de pontos-chave */
+.target-audience-list {
+    list-style: none; /* Remove marcadores de lista padrão */
+    padding: 0;
+    margin: 0;
+}
+
+.target-audience-item {
+    display: flex;
+    align-items: center; /* Alinha ícone e texto verticalmente ao centro */
+    gap: 15px;
+    margin-bottom: 20px;
+    text-align: left;
+    opacity: 0; /* Começa invisível para animação */
+    transform: translateX(-20px); /* Para deslizar da esquerda */
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.target-audience-item:last-child {
+    margin-bottom: 0; /* Remove margem do último item */
+}
+
+.target-audience-item .item-icon {
+    font-size: 2em; /* Ícones maiores e mais destacados */
+    color: var(--secondary-color);
+    flex-shrink: 0; /* Evita que o ícone encolha */
+    /* Removido padding-top para alinhar melhor com align-items: center */
+}
+
+.target-audience-item p {
+    color: var(--text-light); /* Texto claro para destaque */
+    font-size: 1.1em;
+    margin-bottom: 0; /* Remove margem padrão de parágrafo dentro do item */
+    line-height: 1.4; /* Ajuste para melhor legibilidade da lista */
+}
+
+.target-audience-item p strong {
+    color: var(--secondary-color); /* Palavras-chave em verde */
+}
+
+
+.target-audience-graphic {
+    flex: 1; /* Permite que o gráfico ocupe o espaço disponível */
+    min-width: 280px; /* Largura mínima para o gráfico */
+    max-width: 450px; /* Largura máxima para o gráfico */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 300px; /* Altura do container do gráfico */
+    position: relative;
+}
+
+/* Estilos para o SVG do gráfico */
+.growth-chart-svg {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    filter: drop-shadow(0 0 10px rgba(46, 204, 113, 0.7)); /* Sombra para a linha */
+}
+
+/* Estilo da linha do gráfico SVG */
+.growth-path {
+    stroke-dasharray: 1000; /* Um número grande o suficiente para a linha */
+    stroke-dashoffset: 1000;
+    animation: drawLine 3s ease-out forwards; /* Animação de desenho da linha */
+    stroke: url(#gradient-line); /* Aplica o gradiente definido no SVG */
+}
+
+/* Estilo do símbolo do cifrão no SVG */
+.currency-symbol-group {
+    opacity: 0;
+    transform: translate(0px, 0px) scale(0.5); /* Posição inicial do grupo */
+    animation: fadeInScaleSVG 1.5s ease-out 2.5s forwards; /* Animação do cifrão */
+}
+
+.currency-symbol-svg {
+    font-family: var(--font-heading); /* Usa a fonte do cabeçalho */
+    font-size: 3em; /* Tamanho do cifrão */
+    font-weight: 700;
+    fill: var(--secondary-color); /* Cor do cifrão */
+    text-shadow: 0 0 15px rgba(46, 204, 113, 0.8); /* Brilho */
+}
+
+/* Animação para desenhar a linha do SVG */
+@keyframes drawLine {
+    to {
+        stroke-dashoffset: 0;
+    }
+}
+
+/* Animação para o cifrão no SVG */
+@keyframes fadeInScaleSVG {
+    0% {
+        opacity: 0;
+        transform: translate(0px, 0px) scale(0.5);
+    }
+    100% {
+        opacity: 1;
+        transform: translate(0px, 0px) scale(1); /* Posição final sem translate explícito, pois ele já está posicionado no SVG */
+    }
+}
+
+
+/* Keyframes para as animações existentes */
+@keyframes bounceIn {
+    0%, 20%, 40%, 60%, 80%, 100% {
+        transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+    }
+    0% {
+        opacity: 0;
+        transform: scale3d(0.3, 0.3, 0.3);
+    }
+    20% {
+        transform: scale3d(1.1, 1.1, 1.1);
+    }
+    40% {
+        transform: scale3d(0.9, 0.9, 0.9);
+    }
+    60% {
+        opacity: 1;
+        transform: scale3d(1.03, 1.03, 1.03);
+    }
+    80% {
+        transform: scale3d(0.97, 0.97, 0.97);
+    }
+    100% {
+        opacity: 1;
+        transform: scale3d(1, 1, 1);
+    }
+}
+
+@keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    10% { transform: translateX(-3px); }
+    20% { transform: translateX(3px); }
+    30% { transform: translateX(-3px); }
+    40% { transform: translateX(3px); }
+    50% { transform: translateX(-3px); }
+    60% { transform: translateX(3px); }
+    70% { transform: translateX(-3px); }
+    80% { transform: translateX(3px); }
+    90% { transform: translateX(-3px); }
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    100% { transform: scale(1.05); }
+}
+
+@keyframes rotateIn {
+    0% {
+        opacity: 0;
+        transform: rotate(-200deg) scale(0.5);
+    }
+    100% {
+        opacity: 1;
+        transform: rotate(0deg) scale(1);
+    }
+}
+
+/* === Seção de Processo === */
+.process-section {
+    padding: 80px 0;
+    background-color: var(--bg-light);
+    text-align: center;
+}
+
+.process-steps {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 50px;
+}
+
+.step-item {
+    background-color: var(--bg-light);
+    border: 1px solid #e0e0e0;
+    border-radius: 10px;
+    padding: 30px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+    text-align: center;
+    flex: 1;
+    min-width: 280px;
+    max-width: 380px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.step-item:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
+}
+
+.step-icon {
+    font-size: 2.5em;
+    color: var(--secondary-color);
+    margin-bottom: 20px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background-color: rgba(46, 204, 113, 0.1);
+}
+
+.step-item h3 {
+    color: var(--text-dark);
+    margin-bottom: 15px;
+}
+
+.step-item p {
+    color: var(--gray-modern);
+    font-size: 1em;
+}
+
+/* === Nova Seção de Oferta e Garantia === */
+.offer-guarantee-section {
+    background: linear-gradient(135deg, #1A2C42 0%, #2B4360 100%); /* Fundo escuro com gradiente */
+    color: var(--text-light);
+    padding: 80px 20px;
+    text-align: center;
+    /* Alterações aqui para a borda e o brilho */
+    border-top: 10px solid var(--secondary-color); /* Borda superior mais grossa */
+    box-shadow: 0 -8px 20px rgba(46, 204, 113, 0.5); /* Sombra superior para efeito de brilho */
+    position: relative; /* Para garantir que o box-shadow apareça corretamente */
+    z-index: 1; /* Garante que a seção fique "acima" de outras com z-index menor se houver */
+}
+
+.offer-guarantee-section h2 {
+    color: var(--text-light);
+    font-size: 2.8em;
+    margin-bottom: 30px;
+    text-shadow: 0 3px 6px rgba(0, 0, 0, 0.3);
+}
+
+.offer-guarantee-section .offer-text {
+    font-size: 1.3em;
+    color: rgba(255, 255, 255, 0.9);
+    max-width: 800px;
+    margin: 0 auto 25px auto; /* Centraliza o texto e adiciona margem inferior */
+    line-height: 1.6;
+}
+
+.offer-guarantee-section .offer-text strong {
+    color: var(--secondary-color); /* Destaca "15 dias" e "NADA" */
+}
+
+.offer-guarantee-section .small-print {
+    font-size: 0.9em;
+    color: rgba(255, 255, 255, 0.7);
+    margin-top: 30px;
+}
+
+/* === CTA Final Section === */
+.cta-section-final {
+    background: linear-gradient(45deg, #1A2C42, #2B4360); /* Gradiente para a CTA final */
+    padding: 60px 20px;
+    text-align: center;
+    color: var(--text-light);
+    /* Removida a borda superior daqui */
+    /* border-top: 5px solid var(--secondary-color); */
+}
+
+.cta-section-final h2 {
+    font-size: 2.8em;
+    color: var(--text-light);
+    margin-bottom: 40px;
+    text-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.cta-section-final p {
+    font-size: 1.2em;
+    margin-top: 25px;
+    color: #e0e0e0;
+}
+
+/* --- Footer --- */
+footer {
+    background-color: var(--bg-dark);
+    color: #bbb;
+    text-align: center;
+    padding: 30px 20px;
+    font-size: 0.9em;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 30px;
+    margin-bottom: 30px;
+}
+
+.footer-contact, .footer-legal {
+    flex: 1;
+    min-width: 250px;
+    text-align: left;
+}
+
+.footer-contact h4 {
+    color: var(--secondary-color);
+    margin-bottom: 20px;
+    font-size: 1.3em;
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.contact-item i {
+    margin-right: 10px;
+    color: var(--secondary-color);
+    font-size: 1.1em;
+}
+
+.contact-item a {
+    color: rgba(255, 255, 255, 0.8);
+    transition: color 0.3s ease;
+}
+
+.contact-item a:hover {
+    color: var(--text-light);
+}
+
+.footer-legal a {
+    display: block;
+    color: rgba(255, 255, 255, 0.8);
+    margin-bottom: 10px;
+    transition: color 0.3s ease;
+}
+
+.footer-legal a:hover {
+    color: var(--text-light);
+}
+
+.footer-bottom {
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding-top: 20px;
+    margin-top: 20px;
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.footer-bottom p {
+    font-size: 0.9em;
+    margin-bottom: 0;
+}
+
+
+/* --- WhatsApp Floating Button --- */
+.whatsapp-float {
+    position: fixed;
+    width: 60px;
+    height: 60px;
+    bottom: 20px;
+    right: 20px; /* Alterado para a direita */
+    background-color: #25D366;
+    color: white;
+    border-radius: 50%;
+    text-align: center;
+    font-size: 30px;
+    box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4);
+    z-index: 1000;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    animation: pulse-whatsapp 2s infinite; /* Animação de pulso específica */
+}
+
+.whatsapp-float:hover {
+    background-color: #128C7E;
+    transform: scale(1.1);
+    box-shadow: 0 6px 25px rgba(37, 211, 102, 0.6);
+}
+
+@keyframes pulse-whatsapp {
+    0% {
+        transform: scale(1);
+        box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7);
+    }
+    70% {
+        transform: scale(1.05);
+        box-shadow: 0 0 0 20px rgba(37, 211, 102, 0);
+    }
+    100% {
+        transform: scale(1);
+        box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
+    }
+}
+
+/* --- Responsividade (Media Queries) --- */
+@media (max-width: 900px) {
+    .hero-section h1 {
+        font-size: 2.8em;
+        letter-spacing: normal; /* Normaliza letter-spacing em telas menores */
+    }
+    .hero-section .sub-headline {
+        font-size: 1.3em;
+    }
+    h2 {
+        font-size: 2em;
+    }
+    h3 {
+        font-size: 1.5em;
+    }
+    p {
+        font-size: 1em;
+    }
+
+    .problem-list, .solution-list, .process-steps {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .problem-item, .solution-item, .step-item {
+        max-width: 90%;
+        min-width: unset;
+    }
+
+    .target-audience-content {
+        flex-direction: column; /* Empilha as colunas em telas menores */
+        gap: 40px;
+    }
+
+    .target-audience-text,
+    .target-audience-graphic {
+        max-width: 100%; /* Ocupa a largura total em telas pequenas */
+        text-align: center; /* Centraliza o texto */
+    }
+
+    .target-audience-text .intro-paragraph,
+    .target-audience-text .outro-paragraph {
+        text-align: center;
+    }
+
+    /* Alinhar a lista de itens da seção "Para Quem é Meu Serviço?" à esquerda em mobile */
+    .target-audience-list {
+        text-align: left;
+    }
+
+
+    .target-audience-graphic {
+        height: 250px; /* Ajusta a altura do container do gráfico */
+    }
+
+    .growth-chart-svg {
+        transform: scale(0.8); /* Reduz o tamanho do SVG para mobile */
+        transform-origin: center;
+    }
+
+    .currency-symbol-svg {
+        font-size: 2.5em; /* Ajusta o tamanho do cifrão */
+    }
+
+    /* Ajusta o tamanho dos ícones dos cards */
+    .problem-icon, .solution-icon, .step-icon {
+        width: 45px; /* Ligeiramente menor */
+        height: 45px; /* Ligeiramente menor */
+        margin-bottom: 10px; /* Reduzir margem para economizar espaço */
+    }
+
+    .problem-icon i, .solution-icon i, .step-icon i {
+        font-size: 1.5em; /* Ajustado o tamanho da fonte */
+    }
+
+    .footer-content {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .footer-contact, .footer-legal {
+        text-align: center;
+        width: 100%;
+    }
+
+    .footer-legal {
+        margin-top: 20px;
+    }
+
+    .whatsapp-float {
+        width: 50px;
+        height: 50px;
+        bottom: 20px;
+        right: 20px;
+        font-size: 25px;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-section h1 {
+        font-size: 1.8em;
+        word-spacing: normal;
+        letter-spacing: -0.01em;
+    }
+    .hero-section .sub-headline {
+        font-size: 1em;
+    }
+    h2 {
+        font-size: 1.8em;
+    }
+    .cta-section-final h2, .offer-guarantee-section h2 {
+        font-size: 2em; /* Ajusta também o título da nova seção */
+    }
+    .offer-guarantee-section .offer-text {
+        font-size: 1.1em; /* Ajusta o texto da oferta */
+    }
+
+    /* Ajuste para os botões CTA em telas muito pequenas */
+    .btn-primary {
+        font-size: 0.9em; /* Diminui o tamanho da fonte */
+        padding: 12px 25px; /* Diminui o padding */
+    }
+}
