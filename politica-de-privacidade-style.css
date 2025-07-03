@@ -1,0 +1,122 @@
+/* politica-de-privacidade-style.css */
+
+body {
+    font-family: 'Roboto', sans-serif; /* A fonte principal do seu texto */
+    line-height: 1.7; /* Espaçamento entre linhas para melhor leitura */
+    color: #333; /* Cor de texto padrão (quase preto) */
+    margin: 0;
+    padding: 0;
+    background-color: #f8f8f8; /* Fundo suave para a página */
+}
+
+.policy-container {
+    max-width: 850px; /* Largura máxima do conteúdo */
+    margin: 40px auto; /* Centraliza o contêiner na página com margem superior/inferior */
+    padding: 35px;
+    background-color: #fff; /* Fundo branco para o bloco de texto */
+    border-radius: 10px; /* Cantos levemente arredondados */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08); /* Sombra suave para profundidade */
+}
+
+h1 {
+    font-family: 'Poppins', sans-serif; /* Fonte para títulos */
+    font-size: 2em; /* Tamanho do título principal */
+    color: #1A2C42; /* Uma cor escura para destaque (pode ser a sua primary-color) */
+    margin-bottom: 25px;
+    text-align: center;
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+h2 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.5em; /* Tamanho dos subtítulos (seções principais) */
+    color: #2ECC71; /* Uma cor de destaque (pode ser a sua secondary-color) */
+    margin-top: 35px; /* Mais espaço acima para separar as seções */
+    margin-bottom: 18px;
+    font-weight: 600;
+}
+
+h3 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.15em; /* Tamanho dos subtítulos menores */
+    color: #444; /* Cor um pouco mais suave para subtítulos menores */
+    margin-top: 25px;
+    margin-bottom: 12px;
+    font-weight: 600;
+}
+
+p {
+    font-size: 0.95em; /* Tamanho padrão para parágrafos */
+    margin-bottom: 1em; /* Espaçamento entre parágrafos */
+}
+
+ul, ol {
+    font-size: 0.95em;
+    margin-left: 28px; /* Recuo para listas */
+    margin-bottom: 1em;
+}
+
+li {
+    margin-bottom: 0.6em; /* Espaçamento entre itens da lista */
+}
+
+a {
+    color: #2ECC71; /* Cor para links, mesma cor de destaque */
+    text-decoration: none; /* Remove sublinhado padrão */
+    font-weight: 500;
+}
+
+a:hover {
+    text-decoration: underline; /* Adiciona sublinhado ao passar o mouse */
+    color: #1A2C42; /* Mude a cor ao passar o mouse */
+}
+
+.last-update {
+    font-size: 0.85em; /* Tamanho para a data da última atualização */
+    color: #777;
+    text-align: right;
+    margin-top: 30px;
+}
+
+.disclaimer {
+    background-color: #fff8e1; /* Fundo mais suave para avisos */
+    border-left: 4px solid #ffab00; /* Borda de destaque */
+    padding: 15px 20px;
+    margin-bottom: 25px;
+    color: #775a00;
+    border-radius: 5px;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .policy-container {
+        margin: 20px 15px; /* Margem lateral para telas menores */
+        padding: 25px 20px;
+    }
+    h1 {
+        font-size: 1.8em;
+    }
+    h2 {
+        font-size: 1.3em;
+    }
+    h3 {
+        font-size: 1.05em;
+    }
+    p, ul, ol, li {
+        font-size: 0.9em; /* Ligeiramente menor em mobile */
+    }
+}
+
+@media (max-width: 480px) {
+    .policy-container {
+        margin: 15px 10px;
+        padding: 20px 15px;
+    }
+    h1 {
+        font-size: 1.6em;
+    }
+    h2 {
+        font-size: 1.2em;
+    }
+}
